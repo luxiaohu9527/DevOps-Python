@@ -82,9 +82,10 @@ podTemplate(label: 'jenkins-slave', cloud: 'kubernetes', containers: [
 
       // 第六步
       stage('部署K8S平台'){
-      // 使用 Kubectl 的方法，提供 Kubernetes环境，在其方法块内部能够执行 kubectl 命令
+      // 使用 Kubectl 的方法，提供 Kubernetes环境，在其方法块内部能够执行 kubectl 命令  XXXXXXXXXX
         healthPath = sh(script: "python /opt/script/cmdbGetHostIpHealth.py ${app_name}", returnStdout: true).trim()
         // nsName = sh(script: "echo test1", returnStdout: true).trim()
+        // commitId = sh(script: 'git log --pretty=format:"%h" -1', returnStdout: true).trim()
         // commitId = sh(script: 'git log --pretty=format:"%h" -1', returnStdout: true).trim()
         
         sh """
